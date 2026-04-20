@@ -1,0 +1,16 @@
+---
+const { name, imgBase, alt } = Astro.props;
+---
+
+<a href="#" class="product">
+  <picture>
+    <img
+      src={`../img/${imgBase}.png`}
+      alt={alt}
+      loading="lazy"
+    />
+  </picture>
+
+  <h2>{name}</h2>
+  <p class="info">Ten una mayor sensación de colores con {name}</p>
+</a>

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: #c61ce8;
+    background: linear-gradient(47deg, rgba(198, 28, 232, 1) 0%, rgba(71, 71, 237, 1) 50%, rgba(87, 227, 255, 1) 100%);
+    color: #6BFFFF;
+}
+
+.container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+/* GRID PRODUCTOS */
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+/* TARJETA */
+
+.product {
+    background: #b0cbf7;
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #6BFFFF;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+
+/* IMAGEN */
+
+.product img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+
+/* INFO OCULTA */
+
+.info {
+    opacity: 0;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    transition: opacity 0.3s ease;
+}
+
+
+/* HOVER */
+
+.product:hover {
+    transform: translateY(-8px) scale(1.03);
+    background: #380092;
+    animation: pulse;
+    animation-duration: 0.6s;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+.product:hover .info {
+    opacity: 1;
+}

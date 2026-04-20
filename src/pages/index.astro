@@ -1,0 +1,52 @@
+---
+import ProductCard from "../../components/ProductCard.astro";
+import "../../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TITANFLOW</title>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+
+  <body>
+    <main class="container">
+      <h1 class="title">NeonDrive</h1>
+
+      <section class="products">
+        <ProductCard 
+          name="NeonDrive Solar Rush"
+          imgBase="Lata1"
+          alt="Lata1"
+        />
+
+        <ProductCard 
+          name="NeonDrive Zero Pulse"
+          imgBase="Lata2"
+          alt="Lata2"
+        />
+
+		<ProductCard 
+          name="NeonDrive Blue Voltage"
+          imgBase="Lata3"
+          alt="Lata3"
+        />
+
+        <ProductCard 
+          name="NeonDrive Toxic Surge"
+          imgBase="Lata4"
+          alt="Lata4"
+        />
+
+		<ProductCard 
+          name="NeonDrive Night Charge"
+          imgBase="Lata5"
+          alt="Lata5"
+        />
+      </section>
+    </main>
+  </body>
+</html>
