@@ -1,52 +1,58 @@
 ---
 import ProductCard from "../../components/ProductCard.astro";
 import "../../styles/global.css";
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+import { latas1 } from "../../data/latas";
+
+
+const latas = [
+  { slug: "lata1", nombre: "NeonDrive Solar Rush", img: "/img/Lata1.png" },
+  { slug: "lata2", nombre: "NeonDrive Zero Pulse", img: "/img/Lata2.png" },
+  { slug: "lata3", nombre: "NeonDrive Blue Voltage", img: "/img/Lata3.png" },
+  { slug: "lata4", nombre: "NeonDrive Toxic Surge", img: "/img/Lata4.png" },
+  { slug: "lata5", nombre: "NeonDrive Night Charge", img: "/img/Lata5.png" }
+];
 ---
 
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TITANFLOW</title>
 
-    <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   </head>
 
   <body>
+    <Navbar />
+
+    <section class="hero">
+      <video autoplay loop muted playsinline class="bg-video">
+        <source src="/img/0420.mp4" type="video/mp4" />
+      </video>
+    
+      <div class="hero-content">
+        <h1>NeonDrive</h1>
+        <p>Estilo colorido. Energía urbana.</p>
+      </div>
+    </section>
+
     <main class="container">
       <h1 class="title">NeonDrive</h1>
 
       <section class="products">
-        <ProductCard 
-          name="NeonDrive Solar Rush"
-          imgBase="Lata1"
-          alt="Lata1"
-        />
-
-        <ProductCard 
-          name="NeonDrive Zero Pulse"
-          imgBase="Lata2"
-          alt="Lata2"
-        />
-
-		<ProductCard 
-          name="NeonDrive Blue Voltage"
-          imgBase="Lata3"
-          alt="Lata3"
-        />
-
-        <ProductCard 
-          name="NeonDrive Toxic Surge"
-          imgBase="Lata4"
-          alt="Lata4"
-        />
-
-		<ProductCard 
-          name="NeonDrive Night Charge"
-          imgBase="Lata5"
-          alt="Lata5"
-        />
+        {latas.map(l => (
+          <ProductCard 
+            name={l.nombre}
+            img={l.img}
+            alt={l.nombre}
+            slug={l.slug}
+          />
+        ))}
       </section>
+
+      <Footer />
     </main>
   </body>
 </html>

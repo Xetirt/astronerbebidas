@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(47deg, #c61ce8, #4747ed, #57e3ff);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.product-page {
+    padding: 3rem 1.5rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-hero {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    padding: 3.5rem 3rem;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.product-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+
+/* TEXTO */
+
+.product-info {
+    max-width: 420px;
+}
+
+.product-tag {
+    background: #6BFFFF;
+    color: black;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.product-name {
+    font-size: 2.8rem;
+    margin: 1rem 0;
+}
+
+.product-description {
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    font-size: 1.05rem;
+}
+
+
+/* BOTÓN */
+
+.buy-button {
+    display: inline-block;
+    background: #380092;
+    color: white;
+    padding: 0.9rem 1.6rem;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background: #6BFFFF;
+    color: black;
+    transform: scale(1.05);
+}
+
+
+/* IMAGEN */
+
+.product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image img {
+    height: 360px;
+    transition: transform 0.3s ease;
+}
+
+
+/* efecto flotante suave */
+
+.floating-can {
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* HOVER SUAVE */
+
+.product-image img:hover {
+    transform: scale(1.08);
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .product-name {
+        font-size: 1.8rem;
+    }
+    .product-image img {
+        height: 260px;
+    }
+}
+
+main {
+    flex: 1;
+}

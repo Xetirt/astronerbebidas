@@ -1,11 +1,11 @@
 ---
-const { name, imgBase, alt } = Astro.props;
+const { name, img, alt, slug } = Astro.props;
 ---
 
-<a href="#" class="product">
+<a href={`/latas/${slug}`} class="product">
   <picture>
     <img
-      src={`../img/${imgBase}.png`}
+      src={img}
       alt={alt}
       loading="lazy"
     />

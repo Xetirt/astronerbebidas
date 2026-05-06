@@ -1,0 +1,55 @@
+---
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import "../../styles/global1.css";
+import { latas1 } from "../../../data/latas";
+
+export function getStaticPaths() {
+  return latas1.map(l => ({
+    params: { slug: l.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const lata = latas1.find(l => l.slug === slug);
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{lata ? lata.nombre : "Lata no encontrada"}</title>
+  </head>
+
+  <body>
+    <Navbar />
+
+    <main class="product-page">
+      {lata ? (
+        <section class="product-hero black-fury-bg">
+          <div class="product-container">
+
+            <div class="product-info">
+              <span class="product-tag">CLASSIC</span>
+              <h1 class="product-name">{lata.nombre}</h1>
+              <p class="product-description">{lata.desc}</p>
+              <a href="#" class="buy-button">COMPRAR AHORA</a>
+            </div>
+
+            <div class="product-image">
+              <img src={lata.img} alt={lata.nombre} class="floating-can" />
+            </div>
+
+          </div>
+        </section>
+      ) : (
+        <section>
+          <h1>404 - Lata no encontrada</h1>
+          <a href="/">Volver al inicio</a>
+        </section>
+      )}
+    </main>
+
+    <Footer />
+  </body>
+</html>
